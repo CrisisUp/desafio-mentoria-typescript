@@ -98,3 +98,49 @@ Caso queira fazer testes usando html é só alterar o index.html.
 ## Sobre colaboração
 
 Sinta-se livre para abrir pull requests com melhorias para ajudar quem quiser aprender mais sobre Typescript. Também podem tirar dúvidas comigo via comentário.
+
+---
+
+# 🎬 CineTS - Buscador de Filmes Seguro (TypeScript & Vite)
+
+Projeto desenvolvido como desafio para a DIO, focado em transformar uma lógica simples de busca em uma aplicação resiliente, segura e otimizada, aplicando conceitos avançados de infraestrutura e defesa cibernética.
+
+## 🌐 Arquitetura de Rede e Fluxo de Dados
+
+Como estudante de Redes no SENAI, a arquitetura deste projeto foi desenhada para garantir a integridade dos dados desde a origem até o navegador:
+
+Comunicação Criptografada: Todas as requisições para a API do TMDB são realizadas via HTTPS (Porta 443), garantindo TLS/SSL e protegendo contra ataques de interceptação na rede local.
+
+Perímetro de Confiança (CSP): Implementação de uma Content Security Policy que define uma lista branca (allowlist) de domínios, impedindo que o navegador carregue recursos de fontes não autorizadas.
+
+Resolução de Nomes e MIME: Migração para o Vite para garantir o tratamento correto de tipos MIME (application/javascript), evitando bloqueios de segurança do navegador durante o carregamento de módulos TypeScript.
+
+## 🛡️ Camadas de Cybersecurity (Security by Design)
+
+O projeto implementa o conceito de Defense in Depth (Defesa em Profundidade):
+
+Sanitização de Input (Anti-Injection): Função dedicada para limpar entradas do usuário, removendo caracteres especiais que poderiam ser usados em tentativas de injeção na URL da API.
+
+Proteção contra XSS: Renderização dinâmica utilizando textContent e criação manual de nós no DOM (document.createElement), neutralizando qualquer script malicioso vindo de respostas da API.
+
+Gestão de Segredos (Secret Management): Isolamento da API_KEY em arquivo config.ts ignorado pelo Git, prevenindo o vazamento de credenciais em repositórios públicos.
+
+Filtro de Integridade (UX Resilience): Monitoramento do evento onerror em imagens para auto-remoção de elementos corrompidos, mantendo a interface limpa e profissional.
+
+## 🚀 Infraestrutura e Automação (DevOps)
+
+O ambiente de desenvolvimento no Mac mini M4 foi otimizado para performance e segurança:
+
+Motor de Build (Vite): Substituição de dependências vulneráveis por uma toolchain moderna que utiliza HMR (Hot Module Replacement) para desenvolvimento instantâneo.
+
+Gestão de Vulnerabilidades: Uso de npm audit para identificar e remediar falhas na cadeia de suprimentos de software antes do deploy.
+
+Automação de Scripts: Comandos personalizados no package.json para limpeza de ambiente (clean) e build de produção (prod).
+
+## 🛠️ Como Executar
+
+Instale as dependências: npm install.
+
+Configure a Chave: Crie src/config.ts com sua chave do TMDB.
+
+Inicie: npm start
