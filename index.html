@@ -1,15 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
+               img-src 'self' https://image.tmdb.org https://via.placeholder.com data:; 
+               style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
+               font-src 'self' https://fonts.gstatic.com;
+               script-src 'self';"-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="dist/app.js" defer></script>
+    <title>CineTS - Buscador de Filmes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="dist/app.js" type="module" defer></script>
 </head>
+
 <body>
-    <input id="input1">
-    <input id="input2">
-    <button id="button">Clique aqui</button>
+
+    <h1>CineTS</h1>
+    <p>Explore o catálogo do TMDB com TypeScript</p>
+
+    <div class="search-container">
+        <input id="input1" placeholder="Digite o nome de um filme...">
+        <button id="button">Buscar Filme</button>
+    </div>
+
+    <div id="results-container"></div>
+
 </body>
+
 </html>

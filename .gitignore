@@ -2,3 +2,13 @@ node_modules
 app.js
 **/*.js
 **/*.js.map
+
+# Ignorar dependências
+node_modules/
+
+# Ignorar arquivos de configuração sensíveis
+.env
+config.ts
+
+# Ignorar a pasta de saída (opcional, mas comum em DevOps)
+dist/
